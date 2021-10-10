@@ -1,0 +1,32 @@
+<div style="background-color: black">
+    <div style="background-color: #e61">
+        <h1 style="text-align: center; padding: 40px 0;color:black; font-size: 2em"> Los productos </h1>
+    </div>
+
+    <div>
+        <table class="table table-bordered">
+            <thead style="background-color: rgb(122, 57, 207)">
+                <tr>
+                    <th style="text-align:center">Nombre</th>
+                    <th style="text-align:center">Precio</th>
+                    <th style="text-align:center">Imagen</th>
+                </tr>
+            </thead>
+            <tbody style="background-color: rgb(64, 179, 70)">
+                {{#each data}}
+                    <tr>
+                        <td style="text-align:center; padding: 20px">{{this.name}}</td>
+                        <td style="text-align:center; padding: 20px">{{this.price}}</td>
+                        <td><img width="80" src={{this.image}} alt="icono"></td>
+                    </tr> 
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    
+    <a href="http://localhost:8081/" class="btn btn-info"> Agregar un producto</a>
+    
+    <div style="background-color: #e61">
+        <h3 style="text-align: center; padding: 40px 0;color:black">Express y handlebars</h3>
+    </div>
+</div>
