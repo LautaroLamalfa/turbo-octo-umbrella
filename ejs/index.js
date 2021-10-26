@@ -40,6 +40,8 @@ app.post("/", (req,res) => {
     }
 
     array.push(newArray)
+    res.status(201).send("Producto creado")
+
 })
 
 server.listen(8081, () => {
