@@ -24,11 +24,33 @@
                                         <input class="form-control" type="text" id="link" name="image">
                                 </div>
                                 <button type="submit" class="btn btn-success">Enviar</button>
-                                <a href="http://localhost:8081/products" class="btn btn-info" style="float:right"> Ver los productos</a>
                             </div>
                         </div>
                     </form>
                 </div>
+                <hr/>
+                <div>
+                    <table class="table table-bordered">
+                        <thead style="background-color: rgb(122, 57, 207)">
+                            <tr>
+                                <th style="text-align:center">Nombre</th>
+                                <th style="text-align:center">Precio</th>
+                                <th style="text-align:center">Imagen</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: rgb(240, 100, 8)">
+                            <% data.forEach(function(pr){ %>
+                                    <tr>
+                                        <td style="text-align:center; padding: 20px"><%= pr.name %></td>
+                                        <td style="text-align:center; padding: 20px"><%= pr.price %></td>
+                                        <td style="text-align:center; padding: 20px"><img src=<&= pr.image & alt="icono"></td>
+                                    </tr>
+                                <%  }) %>
+                        </tbody>
+                    </table>
+                </div>
+
+                
             <footer style="background-color: rgb(218, 218, 218)">
                 <h3 style="text-align: center; padding: 40px 0;color:#e61">Express y Ejs</h3>
             </footer>

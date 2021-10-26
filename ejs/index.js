@@ -2,6 +2,13 @@ const express = require('express');
 
 const app = express()
 
+const server = require("http").Server(app)
+
+const io = require("socket.io")(server)
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 const array = [{
     name: "memoria USB",
     price: "$250",
@@ -16,11 +23,7 @@ app.set("view engine", "ejs");
 //Rutas
 
 app.get("/", (req, res) => {
-    res.render("index", {mensaje: "Pagina con Ejs"})
-})
-
-app.get("/products", (req, res) => {
-    res.render("products", {data:array})
+    res.render("index", {mensaje: "Pagina con Ejs"}, {data:array})
 })
 
 app.post("/", (req,res) => {
@@ -37,9 +40,8 @@ app.post("/", (req,res) => {
     }
 
     array.push(newArray)
-    res.status(201).send("Producto creado")
 })
 
-app.listen(8081, () => {
+server.listen(8081, () => {
     console.log("Servidor corriendo")
 })
