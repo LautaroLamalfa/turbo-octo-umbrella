@@ -3,7 +3,7 @@ const app = express();
 const handlebars = require('express-handlebars');
 // const Swal = require('sweetalert2')
 
-const PORT = process.env.PORT || 8081
+const PORT = process.env.PORT || 8082
 app.set("views", __dirname + "/views")
 app.set("view engine", "hbs")
 app.use(express.json())
@@ -29,7 +29,7 @@ app.engine(
 const array = [{
     name: "memoria USB",
     price: "$250",
-    image: "https://pixabay.com/get/gdfc740647acaabf841fea198957418fbfe2ce6edcc348eb5b23d5fd8b98d516052df2c8187e9a2f0e7f213b71787f2ece9a90235e424ae969f1d4045b004ff82_1920.jpg"
+    image: "https://pixabay.com/get/g8fccccf10041cf8e5ab20f83ac0e853caa3c48e8e9bf83bc3a70f4d3e19ccb7a27c02c2a78c743704483c3085a2a81da8e6e658236beb287a189feed9d6df8f6_1920.jpg"
     }
 ]
 

@@ -1,0 +1,41 @@
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    body
+        header(style="background-color: rgb(201, 201, 201)")
+
+            h1(style="text-align: center; padding: 40px 0;color:#e61; font-size: 2em")="Los Productos"
+
+            div
+                table(class="table table-bordered")
+
+                    thead(style="background-color: rgb(122, 57, 207)")
+
+                        tr
+
+                            th(style="text-align:center")="Nombre"
+                            th(style="text-align:center")="Precio"
+                            th(style="text-align:center")="Imagen"
+
+                    tbody(style="background-color: rgb(240, 100, 8)")
+
+                        tr
+                            each producto in data
+
+                                td(style="text-align:center; padding:20px")=producto.name
+                            
+                                td(style="text-align:center; padding:20px")= producto.price 
+                            
+                                td(style="text-align:center")
+                                    img(src= producto.image style="width:40px" alt="foto")
+
+                a(href="http://localhost:8083" class="btn btn-info" style="float:right")="Agregar un producto"
+
+        footer(style="background-color: rgb(178, 178, 178)")
+
+            h3(style="text-align: center; padding: 40px 0;color:#e61")="Express y Pug"
+
+                
+
+
+

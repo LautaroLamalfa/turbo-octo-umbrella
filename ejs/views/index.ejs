@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("templates/head", {}) %>
+    <body>
+            <header style="background-color: rgb(218, 218, 218)">
+                <h1 style="text-align: center; padding: 40px 0;color:#e61; font-size: 2em"> <%= mensaje %> </h1>
+            </header>
+        
+                <div style="margin: 40px 50px; background-color:#763ae4 ; padding:35px 15px; border: 4px dotted #b2b9bf; border-radius:12px">
+                    <h2 style ="margin:10px 50px">Introduce tu producto</h2>
+                    <form method="POST" action="/">
+                        <div class="border">
+                            <div class="form-group">
+                                <div style="margin-bottom: 1rem">
+                                    <label style="font-size:large" for="title">Nombre</label>
+                                        <input class="form-control" type="text" id="title" name="name">
+                                </div>
+                                <div style="margin-bottom: 1rem">
+                                    <label style="font-size:large" for="price">Precio</label>
+                                        <input class="form-control" type="number" id="price" name="price">
+                                </div>
+                                <div style="margin-bottom: 1rem">
+                                    <label style="font-size:large" for="link">Imagen</label>
+                                        <input class="form-control" type="text" id="link" name="image">
+                                </div>
+                                <button type="submit" class="btn btn-success">Enviar</button>
+                                <a href="http://localhost:8081/products" class="btn btn-info" style="float:right"> Ver los productos</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <footer style="background-color: rgb(218, 218, 218)">
+                <h3 style="text-align: center; padding: 40px 0;color:#e61">Express y Ejs</h3>
+            </footer>
+    </body>
+</html>
+
+
+
+
