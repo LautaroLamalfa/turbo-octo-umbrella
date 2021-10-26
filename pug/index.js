@@ -23,6 +23,23 @@ app.get("/products", (req, res) => {
     res.render("products", {data:array})
 })
 
+app.post("/", (req,res) => {
+    const {name, price, image} = req.body
+    console.log('Nombre', name);
+    console.log('Precio', price);
+    console.log('Imagen', image);
+
+
+    let newArray = {
+        name,
+        price,
+        image,
+    }
+
+    array.push(newArray)
+    res.status(201).send("Producto creado")
+})
+
 app.listen(8083, () => {
     console.log("Servidor corriendo")
 })
