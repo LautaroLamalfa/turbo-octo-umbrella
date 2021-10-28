@@ -1,18 +1,18 @@
 const express = require('express');
-
 const app = express()
 
 const server = require("http").Server(app)
-
 const io = require("socket.io")(server)
 
+app.use(express.static("public"))
+app.use("/css", express.static(__dirname + 'public/css'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 const array = [{
-    name: "memoria USB",
+    name: "sofa",
     price: "$250",
-    image: "https://pixabay.com/get/gdfc740647acaabf841fea198957418fbfe2ce6edcc348eb5b23d5fd8b98d516052df2c8187e9a2f0e7f213b71787f2ece9a90235e424ae969f1d4045b004ff82_1920.jpg"
+    image: "https://res.cloudinary.com/dpr3boqjf/image/upload/v1628120252/rinconero_cjnise_cjytbt.jpg"
     }
 ]
 
@@ -40,7 +40,7 @@ app.post("/", (req,res) => {
     }
 
     array.push(newArray)
-    res.status(201).send("Producto creado")
+    res.json(newArray)
 
 })
 

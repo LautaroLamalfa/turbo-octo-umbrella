@@ -27,9 +27,9 @@ app.engine(
 )
 
 const array = [{
-    name: "memoria USB",
+    name: "sofa",
     price: "$250",
-    image: "https://pixabay.com/get/g8fccccf10041cf8e5ab20f83ac0e853caa3c48e8e9bf83bc3a70f4d3e19ccb7a27c02c2a78c743704483c3085a2a81da8e6e658236beb287a189feed9d6df8f6_1920.jpg"
+    image: "https://res.cloudinary.com/dpr3boqjf/image/upload/v1628120252/rinconero_cjnise_cjytbt.jpg"
     }
 ]
 
@@ -53,9 +53,9 @@ app.post("/", (req,res) => {
         price,
         image,
     }
-
     array.push(newArray)
-    res.status(201).send("Producto creado")
+    res.json(newArray)
+
 })
 
 
