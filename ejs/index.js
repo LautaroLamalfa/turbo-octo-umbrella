@@ -5,7 +5,7 @@ const server = require("http").Server(app)
 const io = require("socket.io")(server)
 
 app.use(express.static("public"))
-app.use("/css", express.static(__dirname + 'public/css'))
+app.use("/css", express.static(__dirname + './public/css'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 //Rutas
 
 app.get("/", (req, res) => {
-    res.render("index", {mensaje: "Pagina con Ejs", data:array})
+    res.render("home", {mensaje: "Pagina con Ejs", data:array})
 })
 
 app.post("/", (req,res) => {
