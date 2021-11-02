@@ -1,35 +1,12 @@
-const socket = io();
+const express = require("express");
+
+const {Router} = express
+
+const router = new Router();
 
 
-socket.on("message_back", (data) => {
-  console.log(data);
-  render(data);
-  socket.emit("message_client", "Hola servidor!");
-});
+router.get('/', (req,res) => {
+    res.sendFile("./home.ejs", {root:"."});
+})
 
-
-const render = (data) => {
-    let html = data
-      .map((x) => {
-        return `
-              <p>  ${x.msn}  </p>
-          `;
-      })
-      .join(" ");
-  
-    document.querySelector("#caja").innerHTML = html;
-  };
-  
-  const addMsn = () => {
-    console.log("Hola")
-
-    let obj = {
-        msn : document.querySelector("#msn").value
-    }
-
-    socket.emit("data_client", obj)
-
-    document.querySelector("#msn").value = ""
-
-    return false
-}
+module.exports = router;
