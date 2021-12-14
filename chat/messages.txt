@@ -1,0 +1,14 @@
+[
+  {
+    "date": "14/12 - 19:51:00",
+    "user": "lautarolamalfa@gmail.com",
+    "message": "msg prueba",
+    "id": 1
+  },
+  {
+    "date": "14/12 - 20:20:59",
+    "user": "lautarolamalfa@gmail.com",
+    "message": "Todo bien?",
+    "id": 2
+  }
+]
