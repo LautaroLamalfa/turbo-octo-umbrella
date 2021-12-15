@@ -1,0 +1,8 @@
+[
+    {
+        "nombre": "lapices de colores",
+        "precio": 15,
+        "imagen": "https://m.media-amazon.com/images/I/518D4OG9mlL._AC_SX425_.jpg",
+        "id": 1
+    }
+]
