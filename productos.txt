@@ -1,8 +1,14 @@
 [
-    {
-        "nombre": "lapices de colores",
-        "precio": 15,
-        "imagen": "https://m.media-amazon.com/images/I/518D4OG9mlL._AC_SX425_.jpg",
-        "id": 1
-    }
+  {
+    "nombre": "lapices de colores",
+    "precio": 15,
+    "imagen": "https://m.media-amazon.com/images/I/518D4OG9mlL._AC_SX425_.jpg",
+    "id": 1
+  },
+  {
+    "nombre": "tele curvo",
+    "precio": "250",
+    "imagen": "https://dlectro.com/wp-content/uploads/2019/08/LDGXDcuDDAatrok-dlectro.jpg",
+    "id": 2
+  }
 ]
