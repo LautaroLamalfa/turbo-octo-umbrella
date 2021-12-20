@@ -4,7 +4,7 @@ const Contenedor = require("../content/chat");
 const { Router } = express;
 const router = new Router();
 
-let chat = new Contenedor("chat.txt");
+let chat = new Contenedor("message");
 
 
 //GET TODO EL CHAT
@@ -37,15 +37,30 @@ router.post("/", (req, res) => {
   async function saveChat(){
     try {
       await chat.save(newObj);
-      res.send('chat agregado');
-      /* res.render("products", {data:aux}); */
-      
+      res.send({message:'chat agregado'});     
     } catch (error) {
       throw Error("Error en post Chat");
     }
   }
   saveChat();
 });
+
+//DELETE CHAT
+router.delete("/:id", (req, res) => {
+  async function deleteMsg() {
+    try {
+      let msgDelete = await chat.deleteById(parseInt(req.params.id));
+      if (msgDelete != 0){
+        res.send({message: "mensaje borrado"});
+      }else{
+        res.send({message: "mensaje no encontrado"})
+      } 
+    } catch (error) {
+      throw(error);
+    }
+  }
+  deleteMsg();
+})
 
 
 //EXPORT MODULO ROUTER
